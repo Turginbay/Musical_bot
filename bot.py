@@ -1,4 +1,5 @@
 from aiogram import Bot
+import os
 import logging
 import asyncio
 from aiogram import Bot, Dispatcher, types, F
@@ -46,6 +47,11 @@ menu_kb = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text="📂 1 Файл", callback_data="file")],
     [InlineKeyboardButton(text="📂 2 Файл", callback_data="files")]
 ])
+
+@dp.message_handler(commands=["check_files"])
+async def check_files(message: types.Message):
+    files = os.listdir()
+    await message.answer("\n".join(files))
 
 #Start
 @dp.message(Command("start"))
