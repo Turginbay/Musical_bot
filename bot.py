@@ -67,6 +67,14 @@ async def send_file(callback: types.CallbackQuery):
     await bot.send_document(callback.message.chat.id, document=types.FSInputFile(file_path))
     await callback.answer()
 
+
+@dp.message_handler(commands=["send"])
+async def send_file(message: types.Message):
+    file_path = "Musical_bot.docx"  # Файл атауы
+    document = FSInputFile(file_path)  # Файлды Telegram форматына айналдыру
+    await message.answer_document(document)
+
+
 # 📁 Файл жіберу (inline батырма арқылы)
 @dp.callback_query(lambda c: c.data == "files")
 async def send_file(callback: types.CallbackQuery):
