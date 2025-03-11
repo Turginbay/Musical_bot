@@ -23,8 +23,6 @@ bot = Bot(token=TOKEN)
 dp = Dispatcher()
 keep_alive()
 
-file_path_pptx = "/app/Musical_bot.pptx"
-
 #Menu
 menu = ReplyKeyboardMarkup(
     keyboard=[
