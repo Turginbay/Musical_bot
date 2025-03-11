@@ -1,0 +1,6 @@
+yt-dlp
+keep_alive
+flask
+requests
+aiogram
+pyTelegramBotAPI
