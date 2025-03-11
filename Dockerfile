@@ -11,9 +11,6 @@ COPY bot.py /app/bot.py
 # Егер keep_alive.py файлы қажет болса, оны да көшіреміз
 COPY keep_alive.py /app/keep_alive.py
 
-# Word және PowerPoint файлдарын контейнерге қосамыз
-COPY Musical_bot.pptx /app/Musical_bot.pptx
-
 # Python тәуелділіктерін орнатамыз
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
